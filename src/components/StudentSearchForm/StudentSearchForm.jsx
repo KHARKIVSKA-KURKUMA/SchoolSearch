@@ -11,6 +11,7 @@ import {
   TableRow,
   TableHeader,
   StyledTable,
+  StyledBtn,
 } from './StudentSearchForm.styled';
 import { toast } from 'react-toastify';
 
@@ -60,7 +61,11 @@ const StudentSearchForm = () => {
       setValue('');
     }
   };
-
+  const handleShowAllData = () => {
+    setResultArray(data);
+    setSearchCategory('');
+  };
+  console.log('resultArray :>> ', resultArray);
   /* --------------------------------- RENDER --------------------------------- */
   return (
     <Container>
@@ -77,6 +82,9 @@ const StudentSearchForm = () => {
           >
             Search Menu
           </Button>
+          <StyledBtn onClick={handleShowAllData} variant="outlined">
+            Show all data
+          </StyledBtn>
           <Menu
             id="fade-menu"
             MenuListProps={{
