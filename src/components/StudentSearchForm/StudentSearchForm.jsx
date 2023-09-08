@@ -65,7 +65,6 @@ const StudentSearchForm = () => {
     setResultArray(data);
     setSearchCategory('');
   };
-  console.log('resultArray :>> ', resultArray);
   /* --------------------------------- RENDER --------------------------------- */
   return (
     <Container>
