@@ -5,9 +5,12 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  #fade-button {
+    margin-right: auto;
+  }
 `;
 export const InputContainer = styled.div`
-  margin-top: 80px;
+  margin-top: 150px;
   display: flex;
   flex-direction: row;
   -webkit-box-align: center;
@@ -16,4 +19,41 @@ export const InputContainer = styled.div`
   justify-content: center;
   column-gap: 90px;
   row-gap: 40px;
+  margin-bottom: 50px;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+export const ResultWrap = styled.div`
+  margin: 0 auto;
+
+  margin-top: 70px;
+  h2 {
+    text-align: center;
+  }
+`;
+
+export const StyledTable = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+`;
+
+export const TableHeader = styled.th`
+  padding: 8px;
+  background-color: #f2f2f2;
+  text-align: left;
+`;
+
+export const TableRow = styled.tr`
+  &:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+`;
+
+export const TableCell = styled.td`
+  padding: 8px;
+  border: 1px solid #ddd;
 `;

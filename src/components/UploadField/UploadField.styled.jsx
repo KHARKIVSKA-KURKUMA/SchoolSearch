@@ -1,0 +1,19 @@
+import styled from 'styled-components';
+import List from '@mui/material/List';
+
+export const VisuallyHiddenInput = styled('input')`
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  width: 1px;
+`;
+export const ListStyled = styled(List)`
+  position: absolute !important;
+  right: -90px;
+  top: 0;
+`;

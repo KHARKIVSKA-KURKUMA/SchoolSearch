@@ -1,11 +1,12 @@
 import StudentSearchForm from 'components/StudentSearchForm/StudentSearchForm';
 import { ToastContainer } from 'react-toastify';
+import { Container } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <ToastContainer />
       <StudentSearchForm />
-    </div>
+    </Container>
   );
 };
