@@ -51,21 +51,16 @@ const StudentSearchForm = () => {
     e.preventDefault();
     const chosenCategory = e.target[0].name;
     const resultArray = findStudents(chosenCategory, value);
-    // const resultArray = filteredArray.map(item => {
-    //   return {
-    //     id: nanoid(5),
-    //     firstName: item.firstName,
-    //     lastName: item.lastName,
-    //   };
-    // });
     setResultArray(resultArray);
     if (resultArray.length === 0) {
       toast.error(
         'Sorry! Nothing Found! Your search returned no results. Try changing the conditions or double-checking your spelling, and then please submit your request again.'
       );
+    } else {
+      setValue('');
     }
   };
-  console.log('resultArray :>> ', resultArray);
+
   /* --------------------------------- RENDER --------------------------------- */
   return (
     <Container>
@@ -128,6 +123,7 @@ const StudentSearchForm = () => {
           <StyledTable>
             <thead>
               <TableRow>
+                <TableHeader>№</TableHeader>
                 <TableHeader>Student Name</TableHeader>
                 <TableHeader>Student Surname</TableHeader>
                 <TableHeader>Grade</TableHeader>
@@ -140,6 +136,7 @@ const StudentSearchForm = () => {
             <tbody>
               {resultArray.map((student, index) => (
                 <TableRow key={index}>
+                  <TableCell>{index}</TableCell>
                   <TableCell>{student.firstName}</TableCell>
                   <TableCell>{student.lastName}</TableCell>
                   <TableCell>{student.grade}</TableCell>
