@@ -10,15 +10,6 @@ export const Container = styled.div`
     margin-right: auto;
   }
 `;
-export const StyledUl = styled.ul`
-  list-style-type: none;
-  padding: 0;
-`;
-
-export const StyledLi = styled.li`
-  margin-bottom: 8px;
-`;
-
 export const StyledBtn = styled(Button)`
   margin: 10px auto 0 0 !important;
 `;

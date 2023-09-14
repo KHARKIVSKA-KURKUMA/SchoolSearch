@@ -4,9 +4,9 @@ export const studentsSlice = createSlice({
   name: 'student',
   initialState: [],
   reducers: {
-    setData: (_, { payload }) => payload,
+    setStudents: (_, { payload }) => payload,
   },
 });
 
-export const { setData } = studentsSlice.actions;
+export const { setStudents } = studentsSlice.actions;
 export const studentsReducer = studentsSlice.reducer;
