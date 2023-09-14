@@ -17,3 +17,7 @@ export const ListStyled = styled(List)`
   right: -90px;
   top: 0;
 `;
+export const StyledWrap = styled.div`
+  display: flex;
+  gap: 20px;
+`;

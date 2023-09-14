@@ -12,18 +12,11 @@ import {
   TableHeader,
   StyledTable,
   StyledBtn,
+  StyledLi,
+  StyledUl,
 } from './StudentSearchForm.styled';
 import { toast } from 'react-toastify';
-
-const searchCategories = {
-  byName: { label: 'Student Name', name: 'firstName' },
-  byLastName: { label: 'Student Surname', name: 'lastName' },
-  byGrade: { label: 'Grade', name: 'grade' },
-  byClassroom: { label: 'Classroom', name: 'classroom' },
-  byBus: { label: 'Bus', name: 'bus' },
-  byTeachersName: { label: 'Teacher Name', name: 'teacherName' },
-  byTeachersLastName: { label: 'Teacher Surname', name: 'teacherLastName' },
-};
+import { searchCategories } from './searchCategories';
 
 const StudentSearchForm = () => {
   const [value, setValue] = useState('');
@@ -136,8 +129,8 @@ const StudentSearchForm = () => {
                 <TableHeader>Grade</TableHeader>
                 <TableHeader>Classroom</TableHeader>
                 <TableHeader>Bus</TableHeader>
-                <TableHeader>Teacher Name</TableHeader>
-                <TableHeader>Teacher Surname</TableHeader>
+                <TableHeader>Teachers Name</TableHeader>
+                <TableHeader>Teachers Surname</TableHeader>
               </TableRow>
             </thead>
             <tbody>
@@ -149,8 +142,23 @@ const StudentSearchForm = () => {
                   <TableCell>{student.grade}</TableCell>
                   <TableCell>{student.classroom}</TableCell>
                   <TableCell>{student.bus}</TableCell>
-                  <TableCell>{student.teacherName}</TableCell>
-                  <TableCell>{student.teacherLastName}</TableCell>
+                  <TableCell>
+                    <StyledUl>
+                      {student.teachers.map((teacher, index) => (
+                        <StyledLi key={index}>{teacher.teacherName}</StyledLi>
+                      ))}
+                    </StyledUl>
+                  </TableCell>
+
+                  <TableCell>
+                    <StyledUl>
+                      {student.teachers.map((teacher, index) => (
+                        <StyledLi key={index}>
+                          {teacher.teacherLastName}
+                        </StyledLi>
+                      ))}
+                    </StyledUl>
+                  </TableCell>
                 </TableRow>
               ))}
             </tbody>
