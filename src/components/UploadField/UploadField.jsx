@@ -57,7 +57,22 @@ const UploadField = () => {
           teacherName,
         };
       });
-    dispatch(setStudents(students));
+
+    const uniqueStudents = students.filter(
+      (student, index, self) =>
+        index ===
+        self.findIndex(
+          s =>
+            s.grade === student.grade &&
+            s.lastName === student.lastName &&
+            s.firstName === student.firstName &&
+            s.classroom === student.classroom &&
+            s.bus === student.bus &&
+            s.teacherLastName === student.teacherLastName &&
+            s.teacherName === student.teacherName
+        )
+    );
+    dispatch(setStudents(uniqueStudents));
   }, [fileData, dispatch]);
   return (
     <>
